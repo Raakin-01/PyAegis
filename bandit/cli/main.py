@@ -151,8 +151,17 @@ def main():
     ]
 
     # now do normal startup
+    prog = os.path.basename(sys.argv[0])
+    if prog.lower().endswith(".exe"):
+        prog = prog[:-4]
+
     parser = argparse.ArgumentParser(
-        description="Bandit - a Python source code security analyzer",
+        prog=prog,
+        description=(
+            "PyAegis - a Python Static Application Security Testing (SAST) "
+            "scanner (powered by Bandit - a Python source code security "
+            "analyzer)"
+        ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     if sys.version_info >= (3, 14):

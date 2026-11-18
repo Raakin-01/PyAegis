@@ -16,5 +16,11 @@ from bandit.core.constants import *  # noqa
 from bandit.core.issue import *  # noqa
 from bandit.core.test_properties import *  # noqa
 
-__author__ = metadata.metadata("bandit")["Author"]
-__version__ = metadata.version("bandit")
+try:
+    __author__ = metadata.metadata("pyaegis")["Author"]
+    __version__ = metadata.version("pyaegis")
+except metadata.PackageNotFoundError:
+    # Backwards compatibility for environments where the distribution is
+    # still installed under its historical "bandit" name.
+    __author__ = metadata.metadata("bandit")["Author"]
+    __version__ = metadata.version("bandit")

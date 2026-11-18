@@ -20,7 +20,7 @@ This formatter outputs the issues as HTML.
     <meta charset="UTF-8">
 
     <title>
-        Bandit Report
+        PyAegis Security Audit Report
     </title>
 
     <style>
@@ -176,7 +176,7 @@ def report(manager, fileobj, sev_level, conf_level, lines=-1):
 <meta charset="UTF-8">
 
 <title>
-    Bandit Report
+    PyAegis Security Audit Report
 </title>
 
 <style>
@@ -246,6 +246,7 @@ pre {
 
     report_block = """
 <body>
+<h1>PyAegis Security Audit Report</h1>
 {metrics}
 {skipped}
 
